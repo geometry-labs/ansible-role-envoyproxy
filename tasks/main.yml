@@ -6,6 +6,7 @@
   apt:
     name: "{{ envoy_package }}"
     state: "{{ envoy_package_state }}"
+    update_cache: yes
 
 - name: "Create envoy directory"
   file:
