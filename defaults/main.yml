@@ -1,6 +1,6 @@
 ---
 # Package options
-envoy_package: getenvoy-envoy=1.16.3*
+envoy_package: "getenvoy-envoy=1.16.3*"
 envoy_package_state: present
 
 # Service options.
