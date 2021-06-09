@@ -2,11 +2,12 @@
 - include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: Ensure Envoy package is installed
+- name: Update apt cache
   apt:
-    name: "{{ envoy_package }}"
-    state: "{{ envoy_package_state }}"
     update_cache: yes
+
+- name: Ensure Envoy package is installed
+  command: "apt install getenvoy-envoy={{ envoy_version }} -y --allow-downgrades"
 
 - name: "Create envoy directory"
   file:
